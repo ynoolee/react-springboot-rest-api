@@ -14,39 +14,44 @@ public class Order {
 	private final LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
 
-	public Order(UUID orderId, Email email, List<OrderItem> orderItems, LocalDateTime createdAt) {
+	public Order(UUID orderId, Email email, String address, String postcode,
+		List<OrderItem> orderItems, OrderStatus orderStatus, LocalDateTime createdAt, LocalDateTime updatedAt) {
 		this.orderId = orderId;
 		this.email = email;
+		this.address = address;
+		this.postcode = postcode;
 		this.orderItems = orderItems;
+		this.orderStatus = orderStatus;
 		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
 	}
 
 	public UUID getOrderId() {
-		return orderId;
+		return this.orderId;
 	}
 
 	public Email getEmail() {
-		return email;
+		return this.email;
 	}
 
 	public String getAddress() {
-		return address;
+		return this.address;
 	}
 
 	public String getPostcode() {
-		return postcode;
+		return this.postcode;
 	}
 
 	public List<OrderItem> getOrderItems() {
-		return orderItems;
+		return this.orderItems;
 	}
 
 	public OrderStatus getOrderStatus() {
-		return orderStatus;
+		return this.orderStatus;
 	}
 
 	public LocalDateTime getCreatedAt() {
-		return createdAt;
+		return this.createdAt;
 	}
 
 	public LocalDateTime getUpdatedAt() {
