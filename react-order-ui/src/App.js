@@ -2,21 +2,28 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import React from 'react';
 
+function Product(){
+    return (
+        <>
+            <div className="col-2"><img className="img-fluid" src="https://i.imgur.com/HKOFQYa.jpeg" alt=""/>
+            </div>
+            <div className="col">
+                <div className="row text-muted">커피콩</div>
+                <div className="row">Columbia Nariñó</div>
+            </div>
+            <div className="col text-center price">5000원</div>
+            <div className="col text-end action"><a className="btn btn-small btn-outline-dark" href="">추가</a>
+            </div>
+        </>
+    )
+}
 function ProductList() {
     return (
         <React.Fragment>
             <h5 className="flex-grow-0"><b>상품 목록</b></h5>
             <ul className="list-group products">
                 <li className="list-group-item d-flex mt-3">
-                    <div className="col-2"><img className="img-fluid" src="https://i.imgur.com/HKOFQYa.jpeg" alt=""/>
-                    </div>
-                    <div className="col">
-                        <div className="row text-muted">커피콩</div>
-                        <div className="row">Columbia Nariñó</div>
-                    </div>
-                    <div className="col text-center price">5000원</div>
-                    <div className="col text-end action"><a className="btn btn-small btn-outline-dark" href="">추가</a>
-                    </div>
+                    <Product/>
                 </li>
                 <li className="list-group-item d-flex mt-2">
                     <div className="col-2"><img className="img-fluid" src="https://i.imgur.com/HKOFQYa.jpeg" alt=""/>
@@ -44,7 +51,6 @@ function ProductList() {
         </React.Fragment>
     )
 }
-
 function Summary() {
     return (
         <React.Fragment>
