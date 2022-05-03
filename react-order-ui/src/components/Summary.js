@@ -5,12 +5,16 @@ import {useState} from "react";
 
 export const Summary = (props) => {
     const {items = [], onOrderSubmit} = props;
+    // useState 를 통해, input 이 상태와 연결됨
     const [order, setOrder] = useState({
-        email:"", address:"", postcode:""
-    });
+        email:"", address:"", postcode:"" // 초기값을 공백문자열로 세팅!
+    }); // 각 태그와 연결시켜줘
     const totalPrice = items.reduce((prev, curr) => prev + (curr.price * curr.count), 0)
+    // change 가 발생할 때 마다 콜백이 발생할 수 있도록 한다.
+    // 각 필드에 맞는 콜백함수 만들어주자
     const handleEmailInputChanged = (e) => {
-        setOrder({...order, email: e.target.value})
+        // console.log(e.target.value); // 학습용 -> 이런식으로 콘솔에서 확인 가능
+        setOrder({...order, email: e.target.value}) // 실제 타이핑한 값이 order 로 매핑되어야함.
     }
     const handleAddressInputChanged = (e) => {
         setOrder({...order, address: e.target.value})
@@ -18,6 +22,8 @@ export const Summary = (props) => {
     const handlePostcodeInputChange = (e) => {
         setOrder({...order, postcode: e.target.value})}
     const handleSubmit = (e) => {
+        // console.log(e);
+        // 아주 간단한 검증만 해 주겠음
         if(order.address === "" || order.email === "" || order.postcode === "") {
             alert("입력값을 확인해주세요!");
         }else{

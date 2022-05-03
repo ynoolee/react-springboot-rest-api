@@ -40,6 +40,7 @@ function App() {
                     price: v.price,
                     quantity: v.count
                 }))
+                    // 프로미스 반환하면 then 으로 처리해주면 된다
             }).then(v => alert("주문이 정상적으로 접수되었습니다"), e => {
                 alert("서버 장애");
                 console.error(e);
